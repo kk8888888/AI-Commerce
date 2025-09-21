@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent E-Commerce & Payment Systems - Interactive Learning Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 min-h-screen">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-black z-50 flex items-center justify-center">
+        <div class="text-center text-white">
+            <div class="ai-loading-animation mb-4"></div>
+            <h2 class="text-2xl font-bold mb-2">Loading AI Commerce Platform</h2>
+            <p class="text-gray-300">Initializing learning modules...</p>
+            <div class="progress-bar mt-4"></div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 bg-black/20 backdrop-blur-lg border-b border-white/10 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-4">
+                    <div class="ai-logo animate-pulse">
+                        <i class="fas fa-robot text-2xl text-cyan-400"></i>
+                    </div>
+                    <h1 class="text-xl font-bold text-white">AI Commerce Academy</h1>
+                </div>
+                
+                <!-- Progress Indicator -->
+                <div class="flex items-center space-x-4">
+                    <div class="progress-container">
+                        <span class="text-sm text-gray-300" id="progress-text">Module 1 of 6</span>
+                        <div class="w-32 h-2 bg-gray-700 rounded-full mt-1">
+                            <div id="course-progress" class="h-2 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full transition-all duration-500" style="width: 16.67%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Timer -->
+                    <div class="text-center">
+                        <div class="text-sm text-gray-300">Time Remaining</div>
+                        <div id="timer" class="text-lg font-mono text-cyan-400">02:59:45</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Course Introduction -->
+            <section id="introduction" class="course-module active">
+                <div class="text-center mb-12">
+                    <h1 class="text-5xl font-bold text-white mb-6 animate-fade-in">
+                        AI Agent E-Commerce & Payment Systems
+                    </h1>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                        Master the future of autonomous commerce with AI agents, smart payment systems, and the latest 2024-2025 innovations in digital transactions.
+                    </p>
+                    
+                    <!-- Course Overview Cards -->
+                    <div class="grid md:grid-cols-3 gap-6 mt-12">
+                        <div class="course-overview-card">
+                            <i class="fas fa-clock text-3xl text-cyan-400 mb-4"></i>
+                            <h3 class="text-xl font-semibold text-white mb-2">3 Hours</h3>
+                            <p class="text-gray-300">Comprehensive Learning Experience</p>
+                        </div>
+                        <div class="course-overview-card">
+                            <i class="fas fa-brain text-3xl text-purple-400 mb-4"></i>
+                            <h3 class="text-xl font-semibold text-white mb-2">6 Modules</h3>
+                            <p class="text-gray-300">Interactive Learning Modules</p>
+                        </div>
+                        <div class="course-overview-card">
+                            <i class="fas fa-certificate text-3xl text-pink-400 mb-4"></i>
+                            <h3 class="text-xl font-semibold text-white mb-2">Practical</h3>
+                            <p class="text-gray-300">Real-world Case Studies</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Start Button -->
+                <div class="text-center">
+                    <button onclick="startCourse()" class="start-button">
+                        <span>Begin Learning Journey</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Module Navigation -->
+            <nav id="module-nav" class="hidden mb-8">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="showModule('fundamentals')" class="module-nav-btn active" data-module="fundamentals">
+                        <i class="fas fa-foundation"></i>
+                        <span>AI Fundamentals</span>
+                    </button>
+                    <button onclick="showModule('commerce')" class="module-nav-btn" data-module="commerce">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>AI Commerce</span>
+                    </button>
+                    <button onclick="showModule('payments')" class="module-nav-btn" data-module="payments">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Payment Systems</span>
+                    </button>
+                    <button onclick="showModule('case-studies')" class="module-nav-btn" data-module="case-studies">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Case Studies</span>
+                    </button>
+                    <button onclick="showModule('exercises')" class="module-nav-btn" data-module="exercises">
+                        <i class="fas fa-tasks"></i>
+                        <span>Exercises</span>
+                    </button>
+                    <button onclick="showModule('future')" class="module-nav-btn" data-module="future">
+                        <i class="fas fa-rocket"></i>
+                        <span>Future Trends</span>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Module 1: AI Fundamentals -->
+            <section id="fundamentals" class="course-module hidden">
+                <div class="module-header">
+                    <h2 class="module-title">
+                        <i class="fas fa-foundation text-cyan-400 mr-3"></i>
+                        Module 1: AI Agent Fundamentals
+                    </h2>
+                    <p class="module-subtitle">Understanding the foundation of intelligent autonomous agents</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="content-card">
+                        <h3 class="text-2xl font-bold text-white mb-4">What are AI Agents?</h3>
+                        <div class="ai-agent-visualization mb-6">
+                            <div class="agent-brain animate-pulse">
+                                <i class="fas fa-brain text-4xl text-purple-400"></i>
+                            </div>
+                            <div class="agent-connections">
+                                <div class="connection-line"></div>
+                                <div class="connection-node" data-tooltip="Perception">👁️</div>
+                                <div class="connection-node" data-tooltip="Decision">🧠</div>
+                                <div class="connection-node" data-tooltip="Action">⚡</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            AI agents are autonomous systems that perceive their environment, make decisions, and take actions to achieve specific goals. In e-commerce, they revolutionize how businesses operate and customers shop.
+                        </p>
+                        
+                        <div class="key-features">
+                            <h4 class="text-lg font-semibold text-white mb-3">Key Characteristics:</h4>
+                            <ul class="space-y-2">
+                                <li class="feature-item">
+                                    <i class="fas fa-eye text-cyan-400 mr-2"></i>
+                                    <span>Environmental Perception</span>
+                                </li>
+                                <li class="feature-item">
+                                    <i class="fas fa-cog text-purple-400 mr-2"></i>
+                                    <span>Autonomous Decision Making</span>
+                                </li>
+                                <li class="feature-item">
+                                    <i class="fas fa-target text-pink-400 mr-2"></i>
+                                    <span>Goal-Oriented Behavior</span>
+                                </li>
+                                <li class="feature-item">
+                                    <i class="fas fa-sync text-green-400 mr-2"></i>
+                                    <span>Adaptive Learning</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h3 class="text-2xl font-bold text-white mb-4">2024-2025 AI Agent Evolution</h3>
+                        <div class="timeline-container">
+                            <div class="timeline-item">
+                                <div class="timeline-date">2024 Q1</div>
+                                <div class="timeline-content">
+                                    <h5>Large Language Model Integration</h5>
+                                    <p>AI agents now leverage advanced LLMs for natural language understanding and generation.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">2024 Q3</div>
+                                <div class="timeline-content">
+                                    <h5>Multimodal Capabilities</h5>
+                                    <p>Integration of vision, text, and audio processing for comprehensive understanding.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">2025</div>
+                                <div class="timeline-content">
+                                    <h5>Autonomous Commerce</h5>
+                                    <p>Fully autonomous agents capable of end-to-end transaction management.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="interactive-demo mt-6">
+                            <h4 class="text-lg font-semibold text-white mb-3">Interactive Demo: AI Agent Behavior</h4>
+                            <div class="demo-container">
+                                <div id="agent-simulation" class="agent-sim-area">
+                                    <div class="agent-avatar" id="demo-agent">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <div class="environment-elements">
+                                        <div class="env-element customer" data-type="customer">👤</div>
+                                        <div class="env-element product" data-type="product">📱</div>
+                                        <div class="env-element inventory" data-type="inventory">📦</div>
+                                    </div>
+                                </div>
+                                <button onclick="runAgentSimulation()" class="demo-button">
+                                    <i class="fas fa-play mr-2"></i>Run Simulation
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-navigation">
+                    <button onclick="showModule('commerce')" class="next-button">
+                        Next: AI Commerce Systems
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Module 2: AI Commerce Systems -->
+            <section id="commerce" class="course-module hidden">
+                <div class="module-header">
+                    <h2 class="module-title">
+                        <i class="fas fa-shopping-cart text-purple-400 mr-3"></i>
+                        Module 2: AI Commerce Systems
+                    </h2>
+                    <p class="module-subtitle">Revolutionary approaches to autonomous e-commerce</p>
+                </div>
+
+                <div class="grid gap-8">
+                    <div class="content-card">
+                        <h3 class="text-2xl font-bold text-white mb-6">AI-Powered Commerce Architecture</h3>
+                        
+                        <div class="commerce-architecture">
+                            <div class="arch-layer" data-layer="presentation">
+                                <h4>Presentation Layer</h4>
+                                <div class="arch-components">
+                                    <span class="component">AI Chatbots</span>
+                                    <span class="component">Voice Commerce</span>
+                                    <span class="component">AR/VR Interfaces</span>
+                                </div>
+                            </div>
+                            <div class="arch-layer" data-layer="intelligence">
+                                <h4>Intelligence Layer</h4>
+                                <div class="arch-components">
+                                    <span class="component">Recommendation Engine</span>
+                                    <span class="component">Pricing AI</span>
+                                    <span class="component">Fraud Detection</span>
+                                </div>
+                            </div>
+                            <div class="arch-layer" data-layer="data">
+                                <h4>Data Layer</h4>
+                                <div class="arch-components">
+                                    <span class="component">Customer Behavior</span>
+                                    <span class="component">Inventory Data</span>
+                                    <span class="component">Market Trends</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div class="content-card">
+                            <h3 class="text-xl font-bold text-white mb-4">Autonomous Shopping Agents</h3>
+                            <p class="text-gray-300 mb-4">
+                                Personal AI agents that understand user preferences, budget constraints, and shopping goals to make autonomous purchasing decisions.
+                            </p>
+                            
+                            <div class="agent-features-grid">
+                                <div class="feature-box">
+                                    <i class="fas fa-search text-cyan-400"></i>
+                                    <span>Product Discovery</span>
+                                </div>
+                                <div class="feature-box">
+                                    <i class="fas fa-balance-scale text-purple-400"></i>
+                                    <span>Price Comparison</span>
+                                </div>
+                                <div class="feature-box">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <span>Review Analysis</span>
+                                </div>
+                                <div class="feature-box">
+                                    <i class="fas fa-truck text-green-400"></i>
+                                    <span>Logistics Optimization</span>
+                                </div>
+                            </div>
+
+                            <div class="interactive-example mt-6">
+                                <h4 class="font-semibold text-white mb-3">Try It: Shopping Agent Simulation</h4>
+                                <div class="simulation-controls">
+                                    <select id="shopping-scenario" class="sim-select">
+                                        <option value="electronics">Electronics Shopping</option>
+                                        <option value="fashion">Fashion & Apparel</option>
+                                        <option value="groceries">Smart Groceries</option>
+                                    </select>
+                                    <button onclick="runShoppingSimulation()" class="sim-button">
+                                        <i class="fas fa-robot mr-2"></i>Start Agent
+                                    </button>
+                                </div>
+                                <div id="shopping-output" class="simulation-output"></div>
+                            </div>
+                        </div>
+
+                        <div class="content-card">
+                            <h3 class="text-xl font-bold text-white mb-4">Inventory Management AI</h3>
+                            <p class="text-gray-300 mb-4">
+                                Intelligent systems that predict demand, optimize stock levels, and automate supply chain decisions in real-time.
+                            </p>
+
+                            <div class="inventory-dashboard">
+                                <div class="dashboard-metric">
+                                    <span class="metric-label">Stock Optimization</span>
+                                    <div class="metric-value">
+                                        <span class="value">94.2%</span>
+                                        <span class="trend positive">↗ +3.2%</span>
+                                    </div>
+                                </div>
+                                <div class="dashboard-metric">
+                                    <span class="metric-label">Demand Prediction</span>
+                                    <div class="metric-value">
+                                        <span class="value">87.8%</span>
+                                        <span class="trend positive">↗ +1.8%</span>
+                                    </div>
+                                </div>
+                                <div class="dashboard-metric">
+                                    <span class="metric-label">Cost Reduction</span>
+                                    <div class="metric-value">
+                                        <span class="value">23.4%</span>
+                                        <span class="trend positive">↗ +5.1%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chart-container mt-6">
+                                <canvas id="inventoryChart" style="height: 200px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-navigation">
+                    <button onclick="showModule('fundamentals')" class="prev-button">
+                        <i class="fas fa-arrow-left mr-2"></i>Previous: Fundamentals
+                    </button>
+                    <button onclick="showModule('payments')" class="next-button">
+                        Next: Payment Systems
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Module 3: Payment Systems -->
+            <section id="payments" class="course-module hidden">
+                <div class="module-header">
+                    <h2 class="module-title">
+                        <i class="fas fa-credit-card text-green-400 mr-3"></i>
+                        Module 3: AI-Powered Payment Systems
+                    </h2>
+                    <p class="module-subtitle">Next-generation autonomous payment processing and fraud prevention</p>
+                </div>
+
+                <div class="grid gap-8">
+                    <div class="content-card">
+                        <h3 class="text-2xl font-bold text-white mb-6">Payment Evolution Timeline</h3>
+                        <div class="payment-evolution">
+                            <div class="evolution-stage">
+                                <div class="stage-icon">💳</div>
+                                <div class="stage-content">
+                                    <h4>Traditional Cards</h4>
+                                    <p>Manual processing, limited security</p>
+                                </div>
+                            </div>
+                            <div class="evolution-arrow">→</div>
+                            <div class="evolution-stage">
+                                <div class="stage-icon">📱</div>
+                                <div class="stage-content">
+                                    <h4>Digital Wallets</h4>
+                                    <p>Mobile payments, tokenization</p>
+                                </div>
+                            </div>
+                            <div class="evolution-arrow">→</div>
+                            <div class="evolution-stage active">
+                                <div class="stage-icon">🤖</div>
+                                <div class="stage-content">
+                                    <h4>AI Agents</h4>
+                                    <p>Autonomous, intelligent processing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div class="content-card">
+                            <h3 class="text-xl font-bold text-white mb-4">Smart Payment Routing</h3>
+                            <p class="text-gray-300 mb-4">
+                                AI agents intelligently route payments through optimal processors, considering success rates, costs, and regional preferences.
+                            </p>
+
+                            <div class="payment-flow-diagram">
+                                <div class="flow-node start">
+                                    <i class="fas fa-user"></i>
+                                    <span>Customer</span>
+                                </div>
+                                <div class="flow-arrow">↓</div>
+                                <div class="flow-node ai-router">
+                                    <i class="fas fa-brain"></i>
+                                    <span>AI Router</span>
+                                </div>
+                                <div class="flow-branches">
+                                    <div class="branch">
+                                        <div class="flow-node processor">
+                                            <i class="fas fa-building"></i>
+                                            <span>Bank A</span>
+                                            <div class="success-rate">94%</div>
+                                        </div>
+                                    </div>
+                                    <div class="branch">
+                                        <div class="flow-node processor">
+                                            <i class="fas fa-credit-card"></i>
+                                            <span>Payment Co</span>
+                                            <div class="success-rate">91%</div>
+                                        </div>
+                                    </div>
+                                    <div class="branch selected">
+                                        <div class="flow-node processor">
+                                            <i class="fas fa-mobile-alt"></i>
+                                            <span>Digital Wallet</span>
+                                            <div class="success-rate">97%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="routing-factors">
+                                <h4 class="font-semibold text-white mb-3">Routing Factors:</h4>
+                                <div class="factor-list">
+                                    <div class="factor-item">
+                                        <span class="factor-weight">35%</span>
+                                        <span class="factor-name">Success Rate</span>
+                                    </div>
+                                    <div class="factor-item">
+                                        <span class="factor-weight">25%</span>
+                                        <span class="factor-name">Processing Cost</span>
+                                    </div>
+                                    <div class="factor-item">
+                                        <span class="factor-weight">20%</span>
+                                        <span class="factor-name">Processing Speed</span>
+                                    </div>
+                                    <div class="factor-item">
+                                        <span class="factor-weight">20%</span>
+                                        <span class="factor-name">Regional Preferences</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-card">
+                            <h3 class="text-xl font-bold text-white mb-4">Fraud Detection AI</h3>
+                            <p class="text-gray-300 mb-4">
+                                Advanced machine learning models analyze transaction patterns in real-time to prevent fraud while minimizing false positives.
+                            </p>
+
+                            <div class="fraud-detection-demo">
+                                <div class="transaction-analyzer">
+                                    <h4 class="font-semibold text-white mb-3">Real-time Transaction Analysis</h4>
+                                    <div class="transaction-flow">
+                                        <div class="transaction-item" data-risk="low">
+                                            <div class="transaction-info">
+                                                <span class="amount">$47.99</span>
+                                                <span class="merchant">Coffee Shop</span>
+                                                <span class="location">Local</span>
+                                            </div>
+                                            <div class="risk-score low">
+                                                <span class="score">Risk: 2%</span>
+                                                <i class="fas fa-check-circle text-green-400"></i>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-item" data-risk="medium">
+                                            <div class="transaction-info">
+                                                <span class="amount">$299.99</span>
+                                                <span class="merchant">Electronics Store</span>
+                                                <span class="location">Different City</span>
+                                            </div>
+                                            <div class="risk-score medium">
+                                                <span class="score">Risk: 15%</span>
+                                                <i class="fas fa-exclamation-triangle text-yellow-400"></i>
+                                            </div>
+                                        </div>
+                                        <div class="transaction-item" data-risk="high">
+                                            <div class="transaction-info">
+                                                <span class="amount">$1,299.99</span>
+                                                <span class="merchant">Unknown Vendor</span>
+                                                <span class="location">Foreign Country</span>
+                                            </div>
+                                            <div class="risk-score high">
+                                                <span class="score">Risk: 87%</span>
+                                                <i class="fas fa-shield-alt text-red-400"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="fraud-metrics mt-6">
+                                    <div class="metric-row">
+                                        <span class="metric-label">Fraud Detection Rate</span>
+                                        <div class="metric-bar">
+                                            <div class="bar-fill" style="width: 96.3%"></div>
+                                            <span class="bar-value">96.3%</span>
+                                        </div>
+                                    </div>
+                                    <div class="metric-row">
+                                        <span class="metric-label">False Positive Rate</span>
+                                        <div class="metric-bar">
+                                            <div class="bar-fill red" style="width: 2.1%"></div>
+                                            <span class="bar-value">2.1%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h3 class="text-2xl font-bold text-white mb-6">Cryptocurrency & DeFi Integration</h3>
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div class="crypto-feature">
+                                <div class="crypto-icon">
+                                    <i class="fab fa-bitcoin text-orange-400 text-3xl"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold text-white mb-2">Multi-Currency Support</h4>
+                                <p class="text-gray-300 text-sm">
+                                    AI agents automatically handle conversions between fiat currencies and cryptocurrencies based on real-time rates and user preferences.
+                                </p>
+                            </div>
+                            <div class="crypto-feature">
+                                <div class="crypto-icon">
+                                    <i class="fas fa-link text-purple-400 text-3xl"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold text-white mb-2">Smart Contracts</h4>
+                                <p class="text-gray-300 text-sm">
+                                    Automated execution of payment terms and conditions through blockchain-based smart contracts with AI oversight.
+                                </p>
+                            </div>
+                            <div class="crypto-feature">
+                                <div class="crypto-icon">
+                                    <i class="fas fa-shield-alt text-green-400 text-3xl"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold text-white mb-2">Decentralized Security</h4>
+                                <p class="text-gray-300 text-sm">
+                                    Enhanced security through distributed ledger technology with AI-powered anomaly detection across the network.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-navigation">
+                    <button onclick="showModule('commerce')" class="prev-button">
+                        <i class="fas fa-arrow-left mr-2"></i>Previous: Commerce
+                    </button>
+                    <button onclick="showModule('case-studies')" class="next-button">
+                        Next: Case Studies
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Module 4: Case Studies -->
+            <section id="case-studies" class="course-module hidden">
+                <div class="module-header">
+                    <h2 class="module-title">
+                        <i class="fas fa-chart-line text-yellow-400 mr-3"></i>
+                        Module 4: Real-World Case Studies
+                    </h2>
+                    <p class="module-subtitle">Learn from successful AI commerce implementations</p>
+                </div>
+
+                <div class="case-studies-container">
+                    <!-- Case Study Selector -->
+                    <div class="case-study-nav">
+                        <button onclick="showCaseStudy('amazon')" class="case-study-btn active" data-case="amazon">
+                            <i class="fab fa-amazon"></i>
+                            <span>Amazon's AI Revolution</span>
+                        </button>
+                        <button onclick="showCaseStudy('alibaba')" class="case-study-btn" data-case="alibaba">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span>Alibaba's Smart Commerce</span>
+                        </button>
+                        <button onclick="showCaseStudy('stripe')" class="case-study-btn" data-case="stripe">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Stripe's Payment AI</span>
+                        </button>
+                        <button onclick="showCaseStudy('shopify')" class="case-study-btn" data-case="shopify">
+                            <i class="fas fa-store"></i>
+                            <span>Shopify's AI Tools</span>
+                        </button>
+                    </div>
+
+                    <!-- Amazon Case Study -->
+                    <div id="case-amazon" class="case-study active">
+                        <div class="case-header">
+                            <div class="case-logo">
+                                <i class="fab fa-amazon text-4xl text-orange-400"></i>
+                            </div>
+                            <div class="case-info">
+                                <h3 class="text-2xl font-bold text-white">Amazon's AI-Powered Commerce Ecosystem</h3>
+                                <p class="text-gray-300">How Amazon uses AI agents across every aspect of e-commerce</p>
+                            </div>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-8 mt-8">
+                            <div class="content-card">
+                                <h4 class="text-xl font-bold text-white mb-4">Implementation Overview</h4>
+                                <div class="implementation-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-number">35%</div>
+                                        <div class="stat-label">Revenue from AI Recommendations</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">20%</div>
+                                        <div class="stat-label">Reduction in Delivery Costs</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">99.9%</div>
+                                        <div class="stat-label">Fraud Detection Accuracy</div>
+                                    </div>
+                                </div>
+
+                                <div class="ai-systems mt-6">
+                                    <h5 class="font-semibold text-white mb-3">Key AI Systems:</h5>
+                                    <div class="system-list">
+                                        <div class="system-item">
+                                            <i class="fas fa-robot text-cyan-400 mr-3"></i>
+                                            <div>
+                                                <div class="system-name">Alexa Commerce</div>
+                                                <div class="system-desc">Voice-activated shopping agent</div>
+                                            </div>
+                                        </div>
+                                        <div class="system-item">
+                                            <i class="fas fa-chart-line text-purple-400 mr-3"></i>
+                                            <div>
+                                                <div class="system-name">Recommendation Engine</div>
+                                                <div class="system-desc">Personalized product suggestions</div>
+                                            </div>
+                                        </div>
+                                        <div class="system-item">
+                                            <i class="fas fa-warehouse text-green-400 mr-3"></i>
+                                            <div>
+                                                <div class="system-name">Fulfillment Optimization</div>
+                                                <div class="system-desc">Inventory and logistics AI</div>
+                                            </div>
+                                        </div>
+                                        <div class="system-item">
+                                            <i class="fas fa-dollar-sign text-yellow-400 mr-3"></i>
+                                            <div>
+                                                <div class="system-name">Dynamic Pricing</div>
+                                                <div class="system-desc">Real-time price optimization</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="content-card">
+                                <h4 class="text-xl font-bold text-white mb-4">Results & Impact</h4>
+                                <div class="results-timeline">
+                                    <div class="timeline-event">
+                                        <div class="event-year">2018</div>
+                                        <div class="event-content">
+                                            <h6>Alexa Shopping Launch</h6>
+                                            <p>Voice commerce adoption increased by 300%</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-event">
+                                        <div class="event-year">2020</div>
+                                        <div class="event-content">
+                                            <h6>AI Logistics Rollout</h6>
+                                            <p>Delivery time reduced by 40% in major cities</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-event">
+                                        <div class="event-year">2023</div>
+                                        <div class="event-content">
+                                            <h6>Personalization 2.0</h6>
+                                            <p>AI recommendations now drive $150B+ annually</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-event">
+                                        <div class="event-year">2024</div>
+                                        <div class="event-content">
+                                            <h6>Predictive Commerce</h6>
+                                            <p>Pre-shipment of products based on AI predictions</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="key-learnings mt-6">
+                                    <h5 class="font-semibold text-white mb-3">Key Learnings:</h5>
+                                    <ul class="learning-list">
+                                        <li>🎯 Personalization at scale drives significant revenue</li>
+                                        <li>🚚 AI logistics optimization reduces costs dramatically</li>
+                                        <li>🗣️ Voice commerce creates new interaction paradigms</li>
+                                        <li>📊 Data integration across touchpoints is crucial</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="case-alibaba" class="case-study hidden">
+                        <div class="case-header">
+                            <div class="case-logo">
+                                <i class="fas fa-shopping-bag text-4xl text-red-400"></i>
+                            </div>
+                            <div class="case-info">
+                                <h3 class="text-2xl font-bold text-white">Alibaba's Smart Commerce Platform</h3>
+                                <p class="text-gray-300">Revolutionary AI integration in Chinese e-commerce</p>
+                            </div>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-8 mt-8">
+                            <div class="content-card">
+                                <h4 class="text-xl font-bold text-white mb-4">Innovation Highlights</h4>
+                                <div class="implementation-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-number">$1.2T</div>
+                                        <div class="stat-label">Annual GMV with AI</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">85%</div>
+                                        <div class="stat-label">AI-Driven Recommendations</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">500M</div>
+                                        <div class="stat-label">Real-time Decisions/Day</div>
+                                    </div>
+                                </div>
+
+                                <div class="ai-systems mt-6">
+                                    <h5 class="font-semibold text-white mb-3">Revolutionary AI Systems:</h5>
+                                    <div class="system-list">
+                                        <div class="system-item">
+                                            <i class="fas fa-eye text-cyan-400 mr-3"></i>
+                                            <div>
+                                                <div class="system-name">Luban Design AI</div>
+                                                <div class="system-desc">Generates billions of product images automatically</div>
+                                            </div>
+                                        </div>
+                                        <div class="system-item">
+                                            <i class="fas fa-comments text-purple-400 mr-3"></i>
+                                            <div>
+                                                <div class="system-name">AliMe Chatbot</div>
+                                                <div class="system-desc">Handles 95% of customer service inquiries</div>
+                                            </div>
+                                        </div>
+                                        <div class="system-item">
+                                            <i class="fas fa-search text-green-400 mr-3"></i>
+                                            <div>
+                                                <div class="system-name">Pailitao Visual Search</div>
+                                                <div class="system-desc">Search products using photos, 90% accuracy</div>
+                                            </div>
+                                        </div>
+                                        <div class="system-item">
+                                            <i class="fas fa-truck text-yellow-400 mr-3"></i>
+                                            <div>
+                                                <div class="system-name">Cainiao Smart Logistics</div>
+                                                <div class="system-desc">AI-optimized delivery networks across China</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="content-card">
+                                <h4 class="text-xl font-bold text-white mb-4">Live Commerce Innovation</h4>
+                                <div class="results-timeline">
+                                    <div class="timeline-event">
+                                        <div class="event-year">2019</div>
+                                        <div class="event-content">
+                                            <h6>Taobao Live Launch</h6>
+                                            <p>AI-powered live streaming commerce platform</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-event">
+                                        <div class="event-year">2021</div>
+                                        <div class="event-content">
+                                            <h6>Virtual Hosts Debut</h6>
+                                            <p>AI-generated hosts selling products 24/7</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-event">
+                                        <div class="event-year">2023</div>
+                                        <div class="event-content">
+                                            <h6>Metaverse Shopping</h6>
+                                            <p>VR/AR shopping experiences with AI assistants</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-event">
+                                        <div class="event-year">2024</div>
+                                        <div class="event-content">
+                                            <h6>Autonomous Stores</h6>
+                                            <p>Fully automated physical stores with AI management</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="key-learnings mt-6">
+                                    <h5 class="font-semibold text-white mb-3">Key Innovations:</h5>
+                                    <ul class="learning-list">
+                                        <li>🎨 AI generates 4 billion product images daily</li>
+                                        <li>📱 Super app ecosystem integration across services</li>
+                                        <li>🛒 Live commerce generates $60B+ annually</li>
+                                        <li>🤖 95% of customer queries handled by AI</li>
+                                        <li>🌐 Cross-border AI translation for global trade</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="case-stripe" class="case-study hidden">
+                        <div class="case-header">
+                            <div class="case-logo">
+                                <i class="fas fa-credit-card text-4xl text-purple-400"></i>
+                            </div>
+                            <div class="case-info">
+                                <h3 class="text-2xl font-bold text-white">Stripe's Payment Intelligence</h3>
+                                <p class="text-gray-300">AI-powered payment processing and fraud prevention</p>
+                            </div>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-8 mt-8">
+                            <div class="content-card">
+                                <h4 class="text-xl font-bold text-white mb-4">ML-Powered Infrastructure</h4>
+                                <div class="implementation-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-number">99.7%</div>
+                                        <div class="stat-label">Payment Success Rate</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">0.05%</div>
+                                        <div class="stat-label">False Decline Rate</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">$640B</div>
+                                        <div class="stat-label">Annual Payment Volume</div>
+                                    </div>
+                                </div>
+
+                                <div class="ai-systems mt-6">
+                                    <h5 class="font-semibold text-white mb-3">AI Payment Systems:</h5>
+                                    <div class="system-list">
+                                        <div class="system-item">
+                                            <i class="fas fa-shield-alt text-cyan-400 mr-3"></i>
+                                            <div>
+                                                <div class="system-name">Radar ML Platform</div>
+                                                <div class="system-desc">Real-time fraud detection using ML models</div>
+                                            </div>
+                                        </div>
+                                        <div class="system-item">
+                                            <i class="fas fa-route text-purple-400 mr-3"></i>
+                                            <div>
+                                                <div class="system-name">Smart Routing</div>
+                                                <div class="system-desc">Optimizes payment routes for success rates</div>
+                                            </div>
+                                        </div>
+                                        <div class="system-item">
+                                            <i class="fas fa-chart-line text-green-400 mr-3"></i>
+                                            <div>
+                                                <div class="system-name">Revenue Recovery</div>
+                                                <div class="system-desc">AI-powered failed payment recovery system</div>
+                                            </div>
+                                        </div>
+                                        <div class="system-item">
+                                            <i class="fas fa-brain text-yellow-400 mr-3"></i>
+                                            <div>
+                                                <div class="system-name">Adaptive Learning</div>
+                                                <div class="system-desc">Continuously learns from global transaction patterns</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="content-card">
+                                <h4 class="text-xl font-bold text-white mb-4">Fraud Prevention Evolution</h4>
+                                <div class="results-timeline">
+                                    <div class="timeline-event">
+                                        <div class="event-year">2016</div>
+                                        <div class="event-content">
+                                            <h6>Radar Launch</h6>
+                                            <p>Machine learning fraud detection platform debuts</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-event">
+                                        <div class="event-year">2019</div>
+                                        <div class="event-content">
+                                            <h6>3D Secure 2.0</h6>
+                                            <p>AI-enhanced authentication reduces friction</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-event">
+                                        <div class="event-year">2022</div>
+                                        <div class="event-content">
+                                            <h6>Identity Verification</h6>
+                                            <p>Real-time identity verification using AI</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-event">
+                                        <div class="event-year">2024</div>
+                                        <div class="event-content">
+                                            <h6>Predictive Analytics</h6>
+                                            <p>Proactive risk assessment before transactions</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="key-learnings mt-6">
+                                    <h5 class="font-semibold text-white mb-3">Technical Achievements:</h5>
+                                    <ul class="learning-list">
+                                        <li>⚡ Processes millions of transactions per minute</li>
+                                        <li>🔍 Analyzes 1000+ data points per transaction</li>
+                                        <li>🌍 Global network with 99.99% uptime</li>
+                                        <li>📊 Reduces fraud by 85% vs traditional methods</li>
+                                        <li>🚀 Sub-100ms fraud decision making</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="case-shopify" class="case-study hidden">
+                        <div class="case-header">
+                            <div class="case-logo">
+                                <i class="fas fa-store text-4xl text-green-400"></i>
+                            </div>
+                            <div class="case-info">
+                                <h3 class="text-2xl font-bold text-white">Shopify's AI Merchant Tools</h3>
+                                <p class="text-gray-300">Empowering small businesses with enterprise-level AI</p>
+                            </div>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-8 mt-8">
+                            <div class="content-card">
+                                <h4 class="text-xl font-bold text-white mb-4">AI-First Commerce Platform</h4>
+                                <div class="implementation-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-number">2M+</div>
+                                        <div class="stat-label">Merchants Using AI Tools</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">45%</div>
+                                        <div class="stat-label">Increase in Conversion</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">$200B</div>
+                                        <div class="stat-label">GMV Powered by AI</div>
+                                    </div>
+                                </div>
+
+                                <div class="ai-systems mt-6">
+                                    <h5 class="font-semibold text-white mb-3">AI-Powered Features:</h5>
+                                    <div class="system-list">
+                                        <div class="system-item">
+                                            <i class="fas fa-magic text-cyan-400 mr-3"></i>
+                                            <div>
+                                                <div class="system-name">Shopify Magic</div>
+                                                <div class="system-desc">AI-generated product descriptions and content</div>
+                                            </div>
+                                        </div>
+                                        <div class="system-item">
+                                            <i class="fas fa-camera text-purple-400 mr-3"></i>
+                                            <div>
+                                                <div class="system-name">AI Image Editor</div>
+                                                <div class="system-desc">Automated product photo enhancement</div>
+                                            </div>
+                                        </div>
+                                        <div class="system-item">
+                                            <i class="fas fa-chart-bar text-green-400 mr-3"></i>
+                                            <div>
+                                                <div class="system-name">Demand Forecasting</div>
+                                                <div class="system-desc">ML-based inventory prediction</div>
+                                            </div>
+                                        </div>
+                                        <div class="system-item">
+                                            <i class="fas fa-robot text-yellow-400 mr-3"></i>
+                                            <div>
+                                                <div class="system-name">Shop Assistant</div>
+                                                <div class="system-desc">AI chatbot for customer support automation</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="content-card">
+                                <h4 class="text-xl font-bold text-white mb-4">Democratizing AI Commerce</h4>
+                                <div class="results-timeline">
+                                    <div class="timeline-event">
+                                        <div class="event-year">2020</div>
+                                        <div class="event-content">
+                                            <h6>Kit AI Assistant</h6>
+                                            <p>First AI marketing assistant for small businesses</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-event">
+                                        <div class="event-year">2022</div>
+                                        <div class="event-content">
+                                            <h6>Shopify Balance</h6>
+                                            <p>AI-powered financial management tools</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-event">
+                                        <div class="event-year">2023</div>
+                                        <div class="event-content">
+                                            <h6>Magic Suite Launch</h6>
+                                            <p>Comprehensive AI tools for content creation</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-event">
+                                        <div class="event-year">2024</div>
+                                        <div class="event-content">
+                                            <h6>AI Shop Optimization</h6>
+                                            <p>Automated store optimization and A/B testing</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="key-learnings mt-6">
+                                    <h5 class="font-semibold text-white mb-3">SMB Impact:</h5>
+                                    <ul class="learning-list">
+                                        <li>📈 Small businesses see 40% faster growth</li>
+                                        <li>⏰ 70% reduction in manual content creation</li>
+                                        <li>🎯 AI targeting increases ad ROI by 60%</li>
+                                        <li>💬 Customer service automation saves 30 hours/week</li>
+                                        <li>🌟 95% merchant satisfaction with AI tools</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-navigation">
+                    <button onclick="showModule('payments')" class="prev-button">
+                        <i class="fas fa-arrow-left mr-2"></i>Previous: Payments
+                    </button>
+                    <button onclick="showModule('exercises')" class="next-button">
+                        Next: Exercises
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Module 5: Practical Exercises -->
+            <section id="exercises" class="course-module hidden">
+                <div class="module-header">
+                    <h2 class="module-title">
+                        <i class="fas fa-tasks text-pink-400 mr-3"></i>
+                        Module 5: Practical Exercises
+                    </h2>
+                    <p class="module-subtitle">Hands-on experience with AI commerce systems</p>
+                </div>
+
+                <div class="exercises-container">
+                    <!-- Exercise selector -->
+                    <div class="exercise-nav">
+                        <button onclick="showExercise('chatbot')" class="exercise-btn active" data-exercise="chatbot">
+                            Exercise 1: Build a Shopping Chatbot
+                        </button>
+                        <button onclick="showExercise('recommendation')" class="exercise-btn" data-exercise="recommendation">
+                            Exercise 2: Recommendation Algorithm
+                        </button>
+                        <button onclick="showExercise('fraud')" class="exercise-btn" data-exercise="fraud">
+                            Exercise 3: Fraud Detection System
+                        </button>
+                        <button onclick="showExercise('optimization')" class="exercise-btn" data-exercise="optimization">
+                            Exercise 4: Price Optimization
+                        </button>
+                    </div>
+
+                    <!-- Exercise 1: Chatbot -->
+                    <div id="exercise-chatbot" class="exercise active">
+                        <div class="exercise-header">
+                            <h3 class="text-2xl font-bold text-white mb-2">Exercise 1: Build an AI Shopping Assistant</h3>
+                            <p class="text-gray-300 mb-6">Create an interactive chatbot that helps customers find products</p>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <div class="content-card">
+                                <h4 class="text-xl font-bold text-white mb-4">Instructions</h4>
+                                <div class="instruction-steps">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h5>Set User Preferences</h5>
+                                            <p>Configure the chatbot's personality and product knowledge</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h5>Test Conversations</h5>
+                                            <p>Try different customer scenarios and questions</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h5>Analyze Responses</h5>
+                                            <p>Review how the AI handles complex queries</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="chatbot-config mt-6">
+                                    <h5 class="font-semibold text-white mb-3">Chatbot Configuration</h5>
+                                    <div class="config-form">
+                                        <div class="form-group">
+                                            <label>Store Type:</label>
+                                            <select id="store-type" class="config-select">
+                                                <option value="electronics">Electronics</option>
+                                                <option value="fashion">Fashion</option>
+                                                <option value="books">Books</option>
+                                                <option value="home">Home & Garden</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Personality:</label>
+                                            <select id="bot-personality" class="config-select">
+                                                <option value="helpful">Helpful & Professional</option>
+                                                <option value="friendly">Friendly & Casual</option>
+                                                <option value="expert">Expert & Technical</option>
+                                            </select>
+                                        </div>
+                                        <button onclick="initializeChatbot()" class="config-button">
+                                            Initialize Chatbot
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="content-card">
+                                <h4 class="text-xl font-bold text-white mb-4">Interactive Chatbot</h4>
+                                <div class="chatbot-container">
+                                    <div class="chat-messages" id="chat-messages">
+                                        <div class="message bot-message">
+                                            <div class="message-avatar">🤖</div>
+                                            <div class="message-content">
+                                                <p>Hello! I'm your AI shopping assistant. How can I help you find the perfect product today?</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chat-input-container">
+                                        <input type="text" id="chat-input" placeholder="Ask about products, prices, features..." class="chat-input">
+                                        <button onclick="sendChatMessage()" class="chat-send-btn">
+                                            <i class="fas fa-paper-plane"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="quick-questions mt-4">
+                                    <h5 class="font-semibold text-white mb-2">Quick Test Questions:</h5>
+                                    <div class="quick-question-list">
+                                        <button onclick="askQuickQuestion('What laptops do you recommend for gaming?')" class="quick-question-btn">
+                                            Gaming laptops?
+                                        </button>
+                                        <button onclick="askQuickQuestion('I need a gift under $100')" class="quick-question-btn">
+                                            Gift under $100?
+                                        </button>
+                                        <button onclick="askQuickQuestion('Compare iPhone vs Samsung')" class="quick-question-btn">
+                                            Phone comparison?
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="exercise-recommendation" class="exercise hidden">
+                        <div class="exercise-header">
+                            <h3 class="text-2xl font-bold text-white mb-2">Exercise 2: Build a Recommendation Algorithm</h3>
+                            <p class="text-gray-300 mb-6">Create an AI system that suggests products based on user behavior</p>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <div class="content-card">
+                                <h4 class="text-xl font-bold text-white mb-4">Algorithm Configuration</h4>
+                                <div class="instruction-steps">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h5>Select Algorithm Type</h5>
+                                            <p>Choose between collaborative filtering, content-based, or hybrid approaches</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h5>Configure Parameters</h5>
+                                            <p>Set weights for different factors like price, ratings, and similarity</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h5>Test & Optimize</h5>
+                                            <p>Run simulations and analyze recommendation accuracy</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="rec-config mt-6">
+                                    <h5 class="font-semibold text-white mb-3">Algorithm Settings</h5>
+                                    <div class="config-form">
+                                        <div class="form-group">
+                                            <label>Algorithm Type:</label>
+                                            <select id="rec-algorithm" class="config-select">
+                                                <option value="collaborative">Collaborative Filtering</option>
+                                                <option value="content">Content-Based</option>
+                                                <option value="hybrid">Hybrid Approach</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Price Weight: <span id="price-weight-value">50%</span></label>
+                                            <input type="range" id="price-weight" min="0" max="100" value="50" class="config-slider">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Rating Weight: <span id="rating-weight-value">70%</span></label>
+                                            <input type="range" id="rating-weight" min="0" max="100" value="70" class="config-slider">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Similarity Weight: <span id="similarity-weight-value">80%</span></label>
+                                            <input type="range" id="similarity-weight" min="0" max="100" value="80" class="config-slider">
+                                        </div>
+                                        <button onclick="runRecommendationTest()" class="config-button">
+                                            Generate Recommendations
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="content-card">
+                                <h4 class="text-xl font-bold text-white mb-4">Recommendation Results</h4>
+                                <div class="recommendation-display">
+                                    <div class="user-profile mb-4">
+                                        <h5 class="font-semibold text-white mb-2">Sample User Profile:</h5>
+                                        <div class="profile-tags">
+                                            <span class="tag">Tech Enthusiast</span>
+                                            <span class="tag">Budget: $500-1500</span>
+                                            <span class="tag">Gaming Interest</span>
+                                            <span class="tag">Mobile User</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="recommendation-output" class="recommendation-list">
+                                        <div class="rec-item">
+                                            <div class="rec-image">📱</div>
+                                            <div class="rec-info">
+                                                <h6>Gaming Smartphone</h6>
+                                                <p class="rec-score">Match: 94%</p>
+                                                <p class="rec-reason">Based on gaming interest and mobile usage</p>
+                                            </div>
+                                        </div>
+                                        <div class="rec-item">
+                                            <div class="rec-image">🎧</div>
+                                            <div class="rec-info">
+                                                <h6>Gaming Headset</h6>
+                                                <p class="rec-score">Match: 87%</p>
+                                                <p class="rec-reason">Complements gaming smartphone purchase</p>
+                                            </div>
+                                        </div>
+                                        <div class="rec-item">
+                                            <div class="rec-image">🕹️</div>
+                                            <div class="rec-info">
+                                                <h6>Mobile Game Controller</h6>
+                                                <p class="rec-score">Match: 81%</p>
+                                                <p class="rec-reason">Enhances mobile gaming experience</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accuracy-metrics mt-6">
+                                    <h5 class="font-semibold text-white mb-3">Algorithm Performance:</h5>
+                                    <div class="metric-grid">
+                                        <div class="metric-box">
+                                            <span class="metric-label">Precision</span>
+                                            <span id="precision-score" class="metric-value">92.3%</span>
+                                        </div>
+                                        <div class="metric-box">
+                                            <span class="metric-label">Recall</span>
+                                            <span id="recall-score" class="metric-value">88.7%</span>
+                                        </div>
+                                        <div class="metric-box">
+                                            <span class="metric-label">F1-Score</span>
+                                            <span id="f1-score" class="metric-value">90.4%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="exercise-fraud" class="exercise hidden">
+                        <div class="exercise-header">
+                            <h3 class="text-2xl font-bold text-white mb-2">Exercise 3: Fraud Detection System</h3>
+                            <p class="text-gray-300 mb-6">Design an AI system to identify and prevent fraudulent transactions</p>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <div class="content-card">
+                                <h4 class="text-xl font-bold text-white mb-4">Detection Parameters</h4>
+                                <div class="instruction-steps">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h5>Set Risk Thresholds</h5>
+                                            <p>Configure sensitivity levels for different risk factors</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h5>Train ML Model</h5>
+                                            <p>Process transaction data to learn fraud patterns</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h5>Test Detection</h5>
+                                            <p>Analyze sample transactions for fraud indicators</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="fraud-config mt-6">
+                                    <h5 class="font-semibold text-white mb-3">Risk Factors Configuration</h5>
+                                    <div class="config-form">
+                                        <div class="form-group">
+                                            <label>Amount Threshold: $<span id="amount-threshold-value">1000</span></label>
+                                            <input type="range" id="amount-threshold" min="100" max="5000" value="1000" step="100" class="config-slider">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Velocity Sensitivity: <span id="velocity-sensitivity-value">75%</span></label>
+                                            <input type="range" id="velocity-sensitivity" min="0" max="100" value="75" class="config-slider">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Location Risk: <span id="location-risk-value">60%</span></label>
+                                            <input type="range" id="location-risk" min="0" max="100" value="60" class="config-slider">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Device Trust: <span id="device-trust-value">80%</span></label>
+                                            <input type="range" id="device-trust" min="0" max="100" value="80" class="config-slider">
+                                        </div>
+                                        <button onclick="runFraudDetection()" class="config-button">
+                                            Analyze Transactions
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="content-card">
+                                <h4 class="text-xl font-bold text-white mb-4">Live Transaction Analysis</h4>
+                                <div id="fraud-detection-results" class="fraud-results">
+                                    <div class="transaction-stream">
+                                        <div class="stream-header">
+                                            <h5 class="font-semibold text-white">Real-time Transaction Monitor</h5>
+                                            <div class="stream-status">
+                                                <span class="status-dot"></span>
+                                                <span>Live Analysis</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="transaction-feed" id="transaction-feed">
+                                            <!-- Transactions will be populated by JavaScript -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="detection-stats mt-6">
+                                    <h5 class="font-semibold text-white mb-3">Detection Statistics:</h5>
+                                    <div class="stats-grid">
+                                        <div class="stat-box safe">
+                                            <div class="stat-icon">✅</div>
+                                            <div class="stat-info">
+                                                <span class="stat-number" id="safe-transactions">847</span>
+                                                <span class="stat-label">Safe Transactions</span>
+                                            </div>
+                                        </div>
+                                        <div class="stat-box suspicious">
+                                            <div class="stat-icon">⚠️</div>
+                                            <div class="stat-info">
+                                                <span class="stat-number" id="suspicious-transactions">23</span>
+                                                <span class="stat-label">Flagged for Review</span>
+                                            </div>
+                                        </div>
+                                        <div class="stat-box blocked">
+                                            <div class="stat-icon">🚫</div>
+                                            <div class="stat-info">
+                                                <span class="stat-number" id="blocked-transactions">8</span>
+                                                <span class="stat-label">Blocked Transactions</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="exercise-optimization" class="exercise hidden">
+                        <div class="exercise-header">
+                            <h3 class="text-2xl font-bold text-white mb-2">Exercise 4: Dynamic Price Optimization</h3>
+                            <p class="text-gray-300 mb-6">Create an AI system that optimizes product pricing in real-time</p>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-8">
+                            <div class="content-card">
+                                <h4 class="text-xl font-bold text-white mb-4">Optimization Strategy</h4>
+                                <div class="instruction-steps">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h5>Market Analysis</h5>
+                                            <p>Analyze competitor pricing, demand patterns, and market conditions</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h5>Set Constraints</h5>
+                                            <p>Define minimum margins, maximum prices, and business rules</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h5>Optimize & Test</h5>
+                                            <p>Run optimization algorithms and A/B test results</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pricing-config mt-6">
+                                    <h5 class="font-semibold text-white mb-3">Pricing Parameters</h5>
+                                    <div class="config-form">
+                                        <div class="form-group">
+                                            <label>Demand Sensitivity: <span id="demand-sensitivity-value">65%</span></label>
+                                            <input type="range" id="demand-sensitivity" min="0" max="100" value="65" class="config-slider">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Competition Weight: <span id="competition-weight-value">45%</span></label>
+                                            <input type="range" id="competition-weight" min="0" max="100" value="45" class="config-slider">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Inventory Level: <span id="inventory-level-value">230 units</span></label>
+                                            <input type="range" id="inventory-level" min="50" max="500" value="230" class="config-slider">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Minimum Margin: <span id="min-margin-value">20%</span></label>
+                                            <input type="range" id="min-margin" min="5" max="50" value="20" class="config-slider">
+                                        </div>
+                                        <button onclick="runPriceOptimization()" class="config-button">
+                                            Optimize Prices
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="content-card">
+                                <h4 class="text-xl font-bold text-white mb-4">Optimization Results</h4>
+                                <div class="pricing-dashboard">
+                                    <div class="product-pricing" id="pricing-results">
+                                        <div class="price-card">
+                                            <div class="product-info">
+                                                <h6>Gaming Laptop Pro</h6>
+                                                <p class="product-category">Electronics • High Demand</p>
+                                            </div>
+                                            <div class="price-optimization">
+                                                <div class="price-before">
+                                                    <span class="label">Current:</span>
+                                                    <span class="price">$1,299</span>
+                                                </div>
+                                                <div class="price-arrow">→</div>
+                                                <div class="price-after">
+                                                    <span class="label">Optimized:</span>
+                                                    <span class="price optimized">$1,189</span>
+                                                </div>
+                                            </div>
+                                            <div class="optimization-impact">
+                                                <span class="impact-metric">+23% Sales Volume</span>
+                                                <span class="impact-metric">+18% Revenue</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="price-card">
+                                            <div class="product-info">
+                                                <h6>Wireless Headphones</h6>
+                                                <p class="product-category">Audio • Medium Demand</p>
+                                            </div>
+                                            <div class="price-optimization">
+                                                <div class="price-before">
+                                                    <span class="label">Current:</span>
+                                                    <span class="price">$199</span>
+                                                </div>
+                                                <div class="price-arrow">→</div>
+                                                <div class="price-after">
+                                                    <span class="label">Optimized:</span>
+                                                    <span class="price optimized">$179</span>
+                                                </div>
+                                            </div>
+                                            <div class="optimization-impact">
+                                                <span class="impact-metric">+31% Sales Volume</span>
+                                                <span class="impact-metric">+12% Revenue</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="price-card">
+                                            <div class="product-info">
+                                                <h6>Smart Watch Sport</h6>
+                                                <p class="product-category">Wearables • Low Stock</p>
+                                            </div>
+                                            <div class="price-optimization">
+                                                <div class="price-before">
+                                                    <span class="label">Current:</span>
+                                                    <span class="price">$299</span>
+                                                </div>
+                                                <div class="price-arrow">→</div>
+                                                <div class="price-after">
+                                                    <span class="label">Optimized:</span>
+                                                    <span class="price optimized">$329</span>
+                                                </div>
+                                            </div>
+                                            <div class="optimization-impact">
+                                                <span class="impact-metric">-8% Sales Volume</span>
+                                                <span class="impact-metric">+22% Revenue</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="optimization-summary mt-6">
+                                    <h5 class="font-semibold text-white mb-3">Overall Impact:</h5>
+                                    <div class="summary-metrics">
+                                        <div class="summary-item">
+                                            <span class="summary-label">Revenue Increase</span>
+                                            <span class="summary-value positive">+17.3%</span>
+                                        </div>
+                                        <div class="summary-item">
+                                            <span class="summary-label">Profit Margin</span>
+                                            <span class="summary-value positive">+24.1%</span>
+                                        </div>
+                                        <div class="summary-item">
+                                            <span class="summary-label">Inventory Turnover</span>
+                                            <span class="summary-value positive">+15.8%</span>
+                                        </div>
+                                        <div class="summary-item">
+                                            <span class="summary-label">Customer Satisfaction</span>
+                                            <span class="summary-value positive">+8.2%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-navigation">
+                    <button onclick="showModule('case-studies')" class="prev-button">
+                        <i class="fas fa-arrow-left mr-2"></i>Previous: Case Studies
+                    </button>
+                    <button onclick="showModule('future')" class="next-button">
+                        Next: Future Trends
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Module 6: Future Trends -->
+            <section id="future" class="course-module hidden">
+                <div class="module-header">
+                    <h2 class="module-title">
+                        <i class="fas fa-rocket text-red-400 mr-3"></i>
+                        Module 6: Future of AI Commerce
+                    </h2>
+                    <p class="module-subtitle">Emerging trends and technologies shaping tomorrow's commerce</p>
+                </div>
+
+                <div class="grid gap-8">
+                    <div class="content-card">
+                        <h3 class="text-2xl font-bold text-white mb-6">2025-2030 Technology Roadmap</h3>
+                        <div class="future-timeline">
+                            <div class="future-year">
+                                <div class="year-label">2025</div>
+                                <div class="year-technologies">
+                                    <div class="tech-item">
+                                        <i class="fas fa-vr-cardboard text-purple-400"></i>
+                                        <span>Immersive VR Shopping</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <i class="fas fa-brain text-cyan-400"></i>
+                                        <span>Neural Commerce Networks</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="future-year">
+                                <div class="year-label">2027</div>
+                                <div class="year-technologies">
+                                    <div class="tech-item">
+                                        <i class="fas fa-cube text-green-400"></i>
+                                        <span>Quantum Payment Processing</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <i class="fas fa-eye text-yellow-400"></i>
+                                        <span>Emotion-Aware AI</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="future-year">
+                                <div class="year-label">2030</div>
+                                <div class="year-technologies">
+                                    <div class="tech-item">
+                                        <i class="fas fa-dna text-pink-400"></i>
+                                        <span>Biological Authentication</span>
+                                    </div>
+                                    <div class="tech-item">
+                                        <i class="fas fa-satellite text-orange-400"></i>
+                                        <span>Autonomous Supply Networks</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <div class="content-card">
+                            <h3 class="text-xl font-bold text-white mb-4">Emerging Technologies</h3>
+                            <div class="tech-showcase">
+                                <div class="tech-card">
+                                    <div class="tech-icon">
+                                        <i class="fas fa-magic text-purple-400 text-2xl"></i>
+                                    </div>
+                                    <h4>Generative Commerce</h4>
+                                    <p>AI that creates personalized products in real-time based on customer preferences and behavior patterns.</p>
+                                </div>
+                                <div class="tech-card">
+                                    <div class="tech-icon">
+                                        <i class="fas fa-network-wired text-cyan-400 text-2xl"></i>
+                                    </div>
+                                    <h4>Distributed AI Networks</h4>
+                                    <p>Interconnected AI agents working together across platforms to optimize global commerce ecosystems.</p>
+                                </div>
+                                <div class="tech-card">
+                                    <div class="tech-icon">
+                                        <i class="fas fa-microscope text-green-400 text-2xl"></i>
+                                    </div>
+                                    <h4>Nano-Transactions</h4>
+                                    <p>Micropayments for individual interactions, content views, or micro-services enabled by AI optimization.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-card">
+                            <h3 class="text-xl font-bold text-white mb-4">Industry Predictions</h3>
+                            <div class="predictions-list">
+                                <div class="prediction-item">
+                                    <div class="prediction-year">2025</div>
+                                    <div class="prediction-text">
+                                        <strong>60% of purchases</strong> will be initiated by AI agents without human intervention
+                                    </div>
+                                </div>
+                                <div class="prediction-item">
+                                    <div class="prediction-year">2026</div>
+                                    <div class="prediction-text">
+                                        <strong>Conversational Commerce</strong> will represent $1.2 trillion in global sales
+                                    </div>
+                                </div>
+                                <div class="prediction-item">
+                                    <div class="prediction-year">2027</div>
+                                    <div class="prediction-text">
+                                        <strong>Physical stores</strong> will be fully automated with AI-powered everything
+                                    </div>
+                                </div>
+                                <div class="prediction-item">
+                                    <div class="prediction-year">2028</div>
+                                    <div class="prediction-text">
+                                        <strong>Predictive shipping</strong> will eliminate traditional order-to-delivery cycles
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="impact-assessment mt-6">
+                                <h4 class="font-semibold text-white mb-3">Market Impact Assessment</h4>
+                                <canvas id="impactChart" style="height: 200px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h3 class="text-2xl font-bold text-white mb-6">Preparing for the Future</h3>
+                        <div class="preparation-guide">
+                            <div class="guide-section">
+                                <h4 class="text-lg font-semibold text-white mb-3">
+                                    <i class="fas fa-graduation-cap text-cyan-400 mr-2"></i>
+                                    Skills to Develop
+                                </h4>
+                                <ul class="skills-list">
+                                    <li>AI/ML Model Design & Implementation</li>
+                                    <li>Conversational Interface Development</li>
+                                    <li>Blockchain & Distributed Systems</li>
+                                    <li>Data Privacy & Ethics</li>
+                                    <li>Human-AI Collaboration Design</li>
+                                </ul>
+                            </div>
+                            <div class="guide-section">
+                                <h4 class="text-lg font-semibold text-white mb-3">
+                                    <i class="fas fa-building text-purple-400 mr-2"></i>
+                                    Business Strategies
+                                </h4>
+                                <ul class="strategy-list">
+                                    <li>Invest in AI infrastructure early</li>
+                                    <li>Build customer data platforms</li>
+                                    <li>Create AI-first user experiences</li>
+                                    <li>Develop ethical AI guidelines</li>
+                                    <li>Partner with AI technology providers</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-completion">
+                    <div class="completion-card">
+                        <div class="completion-icon">
+                            <i class="fas fa-trophy text-yellow-400 text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Congratulations!</h3>
+                        <p class="text-gray-300 mb-6">You've completed the AI Agent E-Commerce & Payment Systems course</p>
+                        <div class="completion-stats">
+                            <div class="stat">
+                                <span class="stat-value" id="final-time">3:00:00</span>
+                                <span class="stat-label">Time Spent</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">6/6</span>
+                                <span class="stat-label">Modules Completed</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">100%</span>
+                                <span class="stat-label">Progress</span>
+                            </div>
+                        </div>
+                        <button onclick="downloadCertificate()" class="certificate-btn">
+                            <i class="fas fa-download mr-2"></i>
+                            Download Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <div class="module-navigation">
+                    <button onclick="showModule('exercises')" class="prev-button">
+                        <i class="fas fa-arrow-left mr-2"></i>Previous: Exercises
+                    </button>
+                    <button onclick="restartCourse()" class="restart-button">
+                        <i class="fas fa-refresh mr-2"></i>Restart Course
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/20 border-t border-white/10 mt-20">
+        <div class="max-w-7xl mx-auto px-4 py-8 text-center text-gray-400">
+            <p>&copy; 2024 AI Commerce Academy. Built with HTML5, CSS3, and JavaScript.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
